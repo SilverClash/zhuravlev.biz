@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="69.28" viewBox="0 0 80 69.28">
+  <defs>
+    <!-- Top face gradient (overhead light source) -->
+    <linearGradient id="topGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0c0e"/>
+      <stop offset="40%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#060606"/>
+    </linearGradient>
+    
+    <!-- Left face gradient (shadowed) -->
+    <linearGradient id="leftGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="50%" stop-color="#080808"/>
+      <stop offset="100%" stop-color="#040404"/>
+    </linearGradient>
+    
+    <!-- Right face gradient (rim light) -->
+    <linearGradient id="rightGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0d0d0d"/>
+      <stop offset="30%" stop-color="#070707"/>
+      <stop offset="100%" stop-color="#020202"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Isometric cube: hexagon shape -->
+  <!-- Vertices: top(40,0), topRight(80,17.32), bottomRight(80,51.96), bottom(40,69.28), bottomLeft(0,51.96), topLeft(0,17.32), center(40,34.64) -->
+  
+  <!-- Top face -->
+  <polygon fill="url(#topGrad)" points="40,0 80,17.32 40,34.64 0,17.32"/>
+  
+  <!-- Left face -->
+  <polygon fill="url(#leftGrad)" points="0,17.32 40,34.64 40,69.28 0,51.96"/>
+  
+  <!-- Right face -->
+  <polygon fill="url(#rightGrad)" points="80,17.32 40,34.64 40,69.28 80,51.96"/>
+  
+  <!-- Contour lines - Top face (3x3 grid) -->
+  <g stroke="#0d0d0d" stroke-width="0.75" fill="none" stroke-linecap="round">
+    <line x1="50" y1="4.33" x2="10" y2="21.65"/>
+    <line x1="60" y1="8.66" x2="20" y2="25.98"/>
+    <line x1="70" y1="12.99" x2="30" y2="30.31"/>
+    <line x1="10" y1="12.99" x2="50" y2="30.31"/>
+    <line x1="20" y1="8.66" x2="60" y2="25.98"/>
+    <line x1="30" y1="4.33" x2="70" y2="21.65"/>
+  </g>
+  
+  <!-- Contour lines - Left face (3x3 grid) -->
+  <g stroke="#0d0d0d" stroke-width="0.75" fill="none" stroke-linecap="round">
+    <line x1="10" y1="21.65" x2="10" y2="56.29"/>
+    <line x1="20" y1="25.98" x2="20" y2="60.62"/>
+    <line x1="30" y1="30.31" x2="30" y2="64.95"/>
+    <line x1="0" y1="25.98" x2="40" y2="43.30"/>
+    <line x1="0" y1="34.64" x2="40" y2="51.96"/>
+    <line x1="0" y1="43.30" x2="40" y2="60.62"/>
+  </g>
+  
+  <!-- Contour lines - Right face (3x3 grid) -->
+  <g stroke="#0d0d0d" stroke-width="0.75" fill="none" stroke-linecap="round">
+    <line x1="50" y1="30.31" x2="50" y2="64.95"/>
+    <line x1="60" y1="25.98" x2="60" y2="60.62"/>
+    <line x1="70" y1="21.65" x2="70" y2="56.29"/>
+    <line x1="40" y1="43.30" x2="80" y2="25.98"/>
+    <line x1="40" y1="51.96" x2="80" y2="34.64"/>
+    <line x1="40" y1="60.62" x2="80" y2="43.30"/>
+  </g>
+  
+  
+  <!-- Inner Y edges (center junction) -->
+  <g stroke="#050505" stroke-width="0.75" fill="none">
+    <line x1="40" y1="34.64" x2="0" y2="17.32"/>
+    <line x1="40" y1="34.64" x2="80" y2="17.32"/>
+  </g>
+</svg>

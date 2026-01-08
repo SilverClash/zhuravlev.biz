@@ -3,6 +3,8 @@
 html {
 	background-color: var(--color-neutral-950);
 	color: var(--color-neutral-100);
+	background-image: url('/patterns/cubes.svg');
+	background-size: 80px 69.28px;
 }
 
 @theme {

@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+
+@theme {
+	--font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+	--font-mono: 'GeistMono', ui-monospace, monospace;
+}
+
+@font-face {
+	font-family: 'Geist';
+	src: url('/fonts/GeistVF.woff2') format('woff2');
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'GeistMono';
+	src: url('/fonts/GeistMonoVF.woff2') format('woff2');
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}

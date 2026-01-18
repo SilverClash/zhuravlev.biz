@@ -29,4 +29,39 @@
 			</a>
 		{/each}
 	</nav>
+
+	<footer class="mt-auto flex gap-2 pb-8">
+		<a
+			href="https://pagespeed.web.dev/analysis?url=https://zhuravlev.biz"
+			target="_blank"
+			rel="noopener noreferrer"
+			title="Performance"
+		>
+			<img src="/badges/lighthouse_performance.svg" alt="Performance" class="size-10" />
+		</a>
+		<a
+			href="https://pagespeed.web.dev/analysis?url=https://zhuravlev.biz"
+			target="_blank"
+			rel="noopener noreferrer"
+			title="Accessibility"
+		>
+			<img src="/badges/lighthouse_accessibility.svg" alt="Accessibility" class="size-10" />
+		</a>
+		<a
+			href="https://pagespeed.web.dev/analysis?url=https://zhuravlev.biz"
+			target="_blank"
+			rel="noopener noreferrer"
+			title="Best Practices"
+		>
+			<img src="/badges/lighthouse_best-practices.svg" alt="Best Practices" class="size-10" />
+		</a>
+		<a
+			href="https://pagespeed.web.dev/analysis?url=https://zhuravlev.biz"
+			target="_blank"
+			rel="noopener noreferrer"
+			title="SEO"
+		>
+			<img src="/badges/lighthouse_seo.svg" alt="SEO" class="size-10" />
+		</a>
+	</footer>
 </main>

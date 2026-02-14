@@ -56,7 +56,7 @@ function generateStars({ count, seed }: { count: number; seed: number }): Star[]
 		stars.push({
 			x,
 			y,
-			scale: rng() * 0.6 + 0.2,
+			scale: rng() * 0.42 + 0.14,
 			opacity: rng() * 0.5 + 0.3
 		});
 	}
@@ -68,7 +68,7 @@ export function getMoonPhase(date: Date = new Date()): MoonPhase {
 	const diffMs = date.getTime() - KNOWN_NEW_MOON;
 	const diffDays = diffMs / (1000 * 60 * 60 * 24);
 	const phase = ((diffDays % SYNODIC_MONTH) + SYNODIC_MONTH) % SYNODIC_MONTH / SYNODIC_MONTH;
-	const stars = generateStars({ count: 150, seed: 42 });
+	const stars = generateStars({ count: 500, seed: 42 });
 
 	return { phase, name: getPhaseName(phase), stars };
 }

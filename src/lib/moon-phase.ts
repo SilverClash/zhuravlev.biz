@@ -1,10 +1,18 @@
 const SYNODIC_MONTH = 29.53058770576;
 const KNOWN_NEW_MOON = Date.UTC(2000, 0, 6, 18, 14);
 
+export interface Star {
+	x: number;
+	y: number;
+	scale: number;
+	opacity: number;
+}
+
 export interface MoonPhase {
 	/** 0–1 progress through the lunar cycle (0 = new moon, 0.5 = full moon) */
 	phase: number;
 	name: string;
+	stars: Star[];
 }
 
 const PHASE_NAMES: [number, string][] = [
@@ -26,10 +34,41 @@ function getPhaseName(phase: number) {
 	return 'New Moon';
 }
 
+function seededRandom(seed: number) {
+	let s = seed;
+	return () => {
+		s = (s * 16807 + 0) % 2147483647;
+		return s / 2147483647;
+	};
+}
+
+function generateStars({ count, seed }: { count: number; seed: number }): Star[] {
+	const rng = seededRandom(seed);
+	const stars: Star[] = [];
+
+	for (let i = 0; i < count; i++) {
+		const x = rng() * 100;
+		const y = rng() * 100;
+		const distFromCenter = Math.sqrt((x - 50) ** 2 + (y - 50) ** 2);
+
+		if (distFromCenter < 12) continue;
+
+		stars.push({
+			x,
+			y,
+			scale: rng() * 0.6 + 0.2,
+			opacity: rng() * 0.5 + 0.3
+		});
+	}
+
+	return stars;
+}
+
 export function getMoonPhase(date: Date = new Date()): MoonPhase {
 	const diffMs = date.getTime() - KNOWN_NEW_MOON;
 	const diffDays = diffMs / (1000 * 60 * 60 * 24);
 	const phase = ((diffDays % SYNODIC_MONTH) + SYNODIC_MONTH) % SYNODIC_MONTH / SYNODIC_MONTH;
+	const stars = generateStars({ count: 150, seed: 42 });
 
-	return { phase, name: getPhaseName(phase) };
+	return { phase, name: getPhaseName(phase), stars };
 }

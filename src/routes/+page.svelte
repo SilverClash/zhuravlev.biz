@@ -1,9 +1,10 @@
 <script lang="ts">
-	import { Github, Linkedin, type Icon } from '@lucide/svelte';
+	import { Github, Instagram, Linkedin, type Icon } from '@lucide/svelte';
 
 	const links: { name: string; href: string; icon: typeof Icon }[] = [
 		{ name: 'GitHub', href: 'https://github.com/SilverClash', icon: Github },
-		{ name: 'LinkedIn', href: 'https://www.linkedin.com/in/alexey-zh/', icon: Linkedin }
+		{ name: 'LinkedIn', href: 'https://www.linkedin.com/in/alexey-zh/', icon: Linkedin },
+		{ name: 'Instagram', href: 'https://www.instagram.com/alexey.zhuravlev.foto/', icon: Instagram }
 	];
 </script>
 

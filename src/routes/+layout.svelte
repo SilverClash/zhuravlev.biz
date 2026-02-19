@@ -1,12 +1,12 @@
 <script lang="ts">
 	import '../app.css';
-	import MoonBg from '$lib/components/moon-bg.svelte';
-	import { getMoonPhase } from '$lib/moon-phase';
+	import StarsBg from '$lib/components/stars-bg.svelte';
+	import { generateStars } from '$lib/stars';
 
 	let { children } = $props();
 
-	const moon = getMoonPhase();
+	const stars = generateStars({ count: 600, seed: 42 });
 </script>
 
-<MoonBg {moon} />
+<StarsBg {stars} />
 {@render children()}
